@@ -24,10 +24,9 @@ jobs:
 
       - name: Create .env file from GitHub Secrets
         run: |
-          echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> .env
           echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
 
       - name: Build and run containers
         run: |
-          docker-compose up -d --build
+          docker-compose up -d
